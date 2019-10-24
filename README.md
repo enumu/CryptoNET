@@ -1,6 +1,7 @@
 # CryptoNET
-We propose an adversarial cryptographic model intended to encrypt images being transferred over an insecure communication network using a special key-image. The setup is as follows:- 
+We propose an adversarial cryptographic model intended to encrypt images being transferred over an insecure communication network using a special key-image. 
 
+## Setup
 ![Alt text](Images/CryptoNET.png?raw=true "Schematic of Model")
 
 <ol>
@@ -10,3 +11,5 @@ We propose an adversarial cryptographic model intended to encrypt images being t
   <li> Eve is a hacker who has access to plain-Image and CL (chosen plaintext attack). Using previous data he tries to reconstruct the Plain-Image.</li>
   </ol>
 
+## Training Procedure 
+Download the following github repository
