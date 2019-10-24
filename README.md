@@ -13,3 +13,19 @@ We propose an adversarial cryptographic model intended to encrypt images being t
 
 ## Training Procedure 
 Download the following github repository
+```terminal
+git clone https://github.com/avinsit123/CryptoNET.git
+cd CryptoNET
+virtualenv mypython
+source mypython/bin/activate
+```
+
+Download the Dataset.For training and testing purposes, we have currently used the <a href="http://www.vision.caltech.edu/Image_Datasets/Caltech101/">Caltech-101 Dataset</a> with 101 different types of objects having an average of  50 images per class.
+
+```terminal
+cd Dataset
+wget http://www.vision.caltech.edu/Image_Datasets/Caltech101/101_ObjectCategories.tar.gz
+gunzip /content/101_ObjectCategories.tar.gz
+tar -xvf /content/101_ObjectCategories.tar
+cd ../
+```
