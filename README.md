@@ -11,3 +11,6 @@ We propose a GAN based encryption model trained using Adversarial Learning. It c
   <li> Training </li>
   <li> Evaluation and Ablation Study </li>
   <li> Code Refactoring </li>
+
+# CryptoNET
+We propose an adversarial cryptographic model intended to encrypt images being transferred over an insecure communication network using a special key-image. The setup consists of 3 neural networks Alice,Bob and Eve jointly trained in an adversarial fashion.
