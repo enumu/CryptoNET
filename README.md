@@ -39,8 +39,8 @@ python train_autoencoder.py -batch_size 32 -lr 0.001 -n_epochs 10 -dataset_path 
 The autoconvolutional encoder is split into its Encoder and Decoder parts with the Encoder portion being sent to the Alice and the Decoder portion sent to Bob. Next we train the feed forward neural networks on the reciever and sender sides.
 
 ```terminal
-python train_ffn -batch_size 32 -lr 0.001 -n_epochs 5 -dataset_path Dataset/101_ObjectCategories -convencoder_path ConvAutoEncoder.pth -deep_FFN_path FFN.pth
+python train_ffn.py -batch_size 32 -lr 0.001 -n_epochs 5 -dataset_path Dataset/101_ObjectCategories -convencoder_path ConvAutoEncoder.pth -deep_FFN_path FFN.pth
 ```
-The feed forward neural network learns to mix the key and image on Alice's side. 
+The feed forward neural network learns to mix the key and image on Alice's side  and retrieve this image vector on Bob's side.
 
 
