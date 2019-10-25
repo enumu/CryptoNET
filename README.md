@@ -29,7 +29,7 @@ gunzip /content/101_ObjectCategories.tar.gz
 tar -xvf /content/101_ObjectCategories.tar
 cd ../
 ```
-
+![Alt text](Images/3ean3l.gif?raw=true "Schematic of Model")
 First, we train an autoconvolutional encoder with an <b>Encoder-Decoder</b> mechanism to reconstruct images in the Caltech101 Dataset. 
 
 ```terminal
