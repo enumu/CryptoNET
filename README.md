@@ -44,9 +44,13 @@ python train_ffn.py -batch_size 32 -lr 0.001 -n_epochs 5 -dataset_path Dataset/1
 The feed forward neural network learns to mix the key and image on Alice's side  and retrieve this image vector on Bob's side. Now we train Eve to reconstruct the original image from the ciphertext using his own convolutional network.
 
 ```terminal
-python train_Eve.py -batch_size 32 -lr 0.001 -n_epochs 5 -dataset_path Dataset/101_ObjectCategories -convencoder_path ConvAutoEncoder.pth -deep_FFN_path FFN.pth -Eve_checkpt Eve.pth "
-
-
+python train_Eve.py -batch_size 32 -lr 0.001 -n_epochs 5 -dataset_path Dataset/101_ObjectCategories -convencoder_path ConvAutoEncoder.pth -deep_FFN_path FFN.pth -Eve_checkpt Eve.pth 
 ```
+Now finally we need to adversarially train the FFN and Eve jointly.
 
+### Adversarial Training
+First, we train freeze Eve's parameters, and train the FFN in with the aim to minimize the following loss function:
+   L1<sub>adv</sub> = L(Alice<sub>Image</sub>,Bob<sub>Image</sub>) - L(Alice<sub>Image</sub>,Eve<sub>Image</sub>) 
 
+Next we freeze FFN paramters, and train Eve to minimize the loss function
+   L1<sub>adv</sub> = L(Alice<sub>Image</sub>,Eve<sub>Image</sub>) - L(Alice<sub>Image</sub>,Bob<sub>Image</sub>)  
