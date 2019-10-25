@@ -29,3 +29,18 @@ gunzip /content/101_ObjectCategories.tar.gz
 tar -xvf /content/101_ObjectCategories.tar
 cd ../
 ```
+
+First, we train an autoconvolutional encoder with an <b>Encoder-Decoder</b> mechanism to reconstruct images in the Caltech101 Dataset. 
+
+```terminal
+python train_autoencoder.py -batch_size 32 -lr 0.001 -n_epochs 10 -dataset_path Dataset/101_ObjectCategories -chkpt_file ConvAutoEncoder.pth
+```
+
+The autoconvolutional encoder is split into its Encoder and Decoder parts with the Encoder portion being sent to the Alice and the Decoder portion sent to Bob. Next we train the feed forward neural networks on the reciever and sender sides.
+
+```terminal
+python train_ffn -batch_size 32 -lr 0.001 -n_epochs 5 -dataset_path Dataset/101_ObjectCategories -convencoder_path ConvAutoEncoder.pth -deep_FFN_path FFN.pth
+```
+The feed forward neural network learns to mix the key and image on Alice's side. 
+
+
