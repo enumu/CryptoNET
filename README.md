@@ -41,6 +41,12 @@ The autoconvolutional encoder is split into its Encoder and Decoder parts with t
 ```terminal
 python train_ffn.py -batch_size 32 -lr 0.001 -n_epochs 5 -dataset_path Dataset/101_ObjectCategories -convencoder_path ConvAutoEncoder.pth -deep_FFN_path FFN.pth
 ```
-The feed forward neural network learns to mix the key and image on Alice's side  and retrieve this image vector on Bob's side.
+The feed forward neural network learns to mix the key and image on Alice's side  and retrieve this image vector on Bob's side. Now we train Eve to reconstruct the original image from the ciphertext using his own convolutional network.
+
+```terminal
+python train_Eve.py -batch_size 32 -lr 0.001 -n_epochs 5 -dataset_path Dataset/101_ObjectCategories -convencoder_path ConvAutoEncoder.pth -deep_FFN_path FFN.pth -Eve_checkpt Eve.pth "
+
+
+```
 
 
