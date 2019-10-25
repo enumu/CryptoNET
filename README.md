@@ -56,3 +56,10 @@ First, we train freeze Eve's parameters, and train the FFN in with the aim to mi
 Next we freeze FFN paramters, and train Eve to minimize the loss function
 <br>
   **L2<sub>adv</sub> = L(Alice<sub>Image</sub>,Eve<sub>Image</sub>) - L(Alice<sub>Image</sub>,Bob<sub>Image</sub>)** 
+
+We accomplish this process by the command 
+```terminal
+python train_ffn.py -batch_size 32 -lr 0.00001 -GAN_epoch 5 -Alice_epoch 10 -Eve_epoch 10 -dataset_path Dataset/101_ObjectCategories -convencoder_path ConvAutoEncoder.pth -deep_FFN_path FFN.pth -Eve_checkpt 10
+
+PLS COMMENT ANY PROBLEMS IN THE ISSUE SECTION
+```
