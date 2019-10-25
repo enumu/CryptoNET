@@ -55,4 +55,4 @@ First, we train freeze Eve's parameters, and train the FFN in with the aim to mi
 
 Next we freeze FFN paramters, and train Eve to minimize the loss function
 <br>
-  **L1<sub>adv</sub> = L(Alice<sub>Image</sub>,Eve<sub>Image</sub>) - L(Alice<sub>Image</sub>,Bob<sub>Image</sub>)** 
+  **L2<sub>adv</sub> = L(Alice<sub>Image</sub>,Eve<sub>Image</sub>) - L(Alice<sub>Image</sub>,Bob<sub>Image</sub>)** 
